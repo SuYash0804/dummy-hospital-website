@@ -14,7 +14,8 @@
     <title>Document</title>
 </head>
 
-<body>
+<body onload="loaderFunction()">
+    <div id="pre-loader"></div>
     <section id="main_section">
         <header id="menu" menu-visible="false">
             <ul>
@@ -295,9 +296,13 @@
         </section>
     </section>
     <script>
+        const preLoader= document.getElementById("pre-loader");
         const mainMenu = document.querySelector("header");
         const menuButton = document.querySelector("#menu_button");
 
+        function loaderFunction(){
+            preLoader.style.display="none"
+        }
         menuButton.addEventListener("click", () => {
             const menuVisible = mainMenu.getAttribute('menu-visible');
 
