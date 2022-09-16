@@ -149,8 +149,8 @@
             </div>
             <div>
                 <img loading="lazy"
-                src="https://envato-shoebox-0.imgix.net/5c13/b133-8136-43fd-b9cc-ce08b3c268a1/_8544842.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=700&s=fa926deeb781a08292d3777cf2d1f8d4"
-                alt="">
+                    src="https://envato-shoebox-0.imgix.net/5c13/b133-8136-43fd-b9cc-ce08b3c268a1/_8544842.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=700&s=fa926deeb781a08292d3777cf2d1f8d4"
+                    alt="">
             </div>
         </section>
         <section id="form_section">
@@ -160,8 +160,10 @@
                 <input type="text" placeholder="Name">
                 <input type="email" placeholder="Email">
                 <input type="number" placeholder="Phone number">
-                <input type= "text" placeholder="Describe Your Treatment">
-                <a href=""><div>Submit</div></a>
+                <input type="text" placeholder="Describe Your Treatment">
+                <a href="">
+                    <div>Submit</div>
+                </a>
             </form>
             <section id="eligibility" class="form_subsection">
                 <div class="subsection_text">
@@ -289,10 +291,43 @@
                     </ul>
                 </div>
             </section>
-            
+
         </section>
     </section>
-    <script src="script.js">
+    <script>
+        const mainMenu = document.querySelector("header");
+        const menuButton = document.querySelector("#menu_button");
+
+        menuButton.addEventListener("click", () => {
+            const menuVisible = mainMenu.getAttribute('menu-visible');
+
+            if (menuVisible === "false") {
+                mainMenu.setAttribute("menu-visible", true);
+                document.querySelector("#menu_button").innerHTML = `<i class="fa-solid fa-arrow-left"></i>`;
+
+            } else {
+                mainMenu.setAttribute("menu-visible", false);
+                document.querySelector("#menu_button").innerHTML = `<span> Menu</span>`;
+            }
+
+
+        });
+
+        const navMain = document.querySelector("#navbar");
+        const navHamburger = document.querySelector("#hamburger");
+
+        navHamburger.addEventListener("click", () => {
+            const navVisible = navMain.getAttribute('navbar-visible');
+
+            if (navVisible === "false") {
+                navMain.setAttribute("navbar-visible", true);
+
+            } else {
+                navMain.setAttribute("navbar-visible", false);
+            }
+
+
+        });
     </script>
 </body>
 
