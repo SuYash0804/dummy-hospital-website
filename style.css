@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Combo&family=Lato&family=Overpass:wght@200&family=Ubuntu+Mono:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Combo&family=Courgette&family=Lato&family=Overpass:wght@200&family=Poppins:ital,wght@1,900&family=Rubik&family=Ubuntu+Mono:ital@1&display=swap');
 
 * {
     margin: 0px;
@@ -264,7 +264,7 @@ div h3 {
     width: 90vw;
     margin: auto;
     display: flex;
-    gap: 100px;
+    gap: 10px;
     align-items: center;
     justify-content: space-between;
     border-bottom: 2px dotted steelblue;
@@ -273,7 +273,7 @@ div h3 {
 .subsection_text {
     padding: 50px 0px;
     text-align: justify;
-    width: 50%;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -282,6 +282,7 @@ div h3 {
 }
 
 .subsection_text h2 {
+    text-align: left;
     line-height: 70px;
     font-size: 30px;
     font-weight: bolder;
@@ -290,6 +291,9 @@ div h3 {
 .subsection_text p {
     line-height: 35px;
     font-size: 17.5px;
+}
+.subsection_text span {
+    color: red;
 }
 
 .subsection_text ul li {
@@ -304,10 +308,10 @@ div h3 {
     width: 10px;
     height: 10px;
     background-color: rgba(0, 0, 0, 0);
-    border: 3px solid aqua;
+    border: 3px solid steelblue;
     position: absolute;
     top: 25%;
-    left: -5%;
+    left: -3.5%;
     border-radius: 50%;
 }
 
@@ -327,10 +331,14 @@ div h3 {
     width: 100%;
     border-bottom: 2px dotted steelblue;
 }
+.form_subsection_left {
+    width: 65%;
+}
 
 form {
-    width: 600px;
-    height: 450px;
+    width: 400px;
+    height: 500px;
+    padding: 20px 0px;
     float: right;
     display: flex;
     flex-direction: column;
@@ -339,14 +347,21 @@ form {
     gap: 15px;
     box-shadow: 0px 0px 15px black;
     position: sticky;
-    top: 0vh;
+    top: 20vh;
     border-radius: 7px;
-    transform: translateY(325px);
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(2px);
+    z-index: 10;
 }
 
 form>* {
     width: 80%;
     border-radius: 7px;
+}
+form h3 {
+    font-size: 50px;
+    font-family: 'Courgette', cursive;
+    color: steelblue;
 }
 
 form input {
@@ -355,8 +370,7 @@ form input {
 }
 
 form input:nth-child(6) {
-    padding: 50px 20px;
-
+    height: 30%;
 }
 
 form div {
@@ -364,8 +378,13 @@ form div {
     align-items: center;
     justify-content: center;
     background-color: steelblue;
+    color: white;
     padding: 10px 20px;
     border-radius: 10px;
+}
+
+#overview .subsection_text {
+    width: 50%;
 }
 
 @media (orientation: portrait) {
@@ -668,7 +687,7 @@ form div {
         width: 10px;
         height: 10px;
         background-color: rgba(0, 0, 0, 0);
-        border: 3px solid aqua;
+        border: 3px solid steelblue;
         position: absolute;
         top: 23%;
         left: -10%;
@@ -678,7 +697,7 @@ form div {
     #overview_section_image{
         width: 100%;
         position: relative;
-        bottom: 5em;
+        bottom: 2em;
     }
     #overview_section_image img{
         width: 100%;
@@ -703,4 +722,68 @@ form div {
     .subsection_text ul li::before {
         left: -8%
     }
+    #overview .subsection_text {
+        width: 100%;
+    }
+
+    .form_subsection_left{
+        width: 100%;
+    }
+
+    #faq_dialog{
+        padding: 0px 25px;
+    }
+    #faq_dialog h3{
+        padding: 20px 0px;
+        font-size: 20px;
+        position: relative;
+        border-top: 2px solid steelblue;
+        cursor: pointer;
+        transition: all 0.25s ease-in-out;
+    }
+    #faq_dialog h3:active{
+        color:  steelblue;
+        transition: all 0.25s ease-in-out;
+    }
+    #faq_dialog[p-visibility = "false"] h3::after{
+        content: '+';
+        width: 20px;
+        height: 20px;
+        font-size: 25px;
+        top: 20px;
+        right: 102%;
+        color: steelblue;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.25s ease-in-out;
+    }
+    #faq_dialog[p-visibility = "true"] h3::after{
+        content: '-';
+        width: 20px;
+        height: 20px;
+        font-size: 25px;
+        top: 20px;
+        right: 102%;
+        color: steelblue;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.25s ease-in-out;
+    }
+    
+    #faq_dialog[p-visibility="false"] p{
+        font-size: 0px;
+        transition: all 0.25s ease-in-out;
+    }
+    
+
+    #faq_dialog[p-visibility="true"] p{
+        font-size: 15px;
+        border-top: 2px solid steelblue;
+        transition: all 0.25s ease-in-out;
+    }
+    
 }
