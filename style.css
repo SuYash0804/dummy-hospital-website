@@ -266,7 +266,7 @@ div h3 {
     display: flex;
     gap: 10px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     border-bottom: 2px dotted steelblue;
 }
 
@@ -385,6 +385,69 @@ form div {
 
 #overview .subsection_text {
     width: 50%;
+}
+
+#faq_dialog{
+    padding: 0px 25px;
+}
+#faq_dialog h3{
+    padding: 20px 0px;
+    font-size: 20px;
+    position: relative;
+    cursor: pointer;
+}
+#faq_dialog h3:active{
+    color:  steelblue;
+}
+#faq_dialog h3::after{
+    content: '+';
+    width: 20px;
+    height: 20px;
+    font-size: 25px;
+    top: 20px;
+    right: 102%;
+    color: steelblue;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease-in-out;
+}
+
+#faq_dialog input:checked ~ label h3::after{
+    content: '-';
+    width: 20px;
+    height: 20px;
+    font-size: 25px;
+    top: 20px;
+    right: 102%;
+    color: steelblue;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease-in-out;
+}
+
+#faq_dialog p{
+    max-height: 0px;
+    font-size: 0px;
+    transition: all 0.25s ease-in-out;
+}
+
+
+#faq_dialog input:checked ~ div p{
+    max-height: 100%;
+    font-size: 15px;
+    transition: all 0.25s ease-in-out;
+}
+
+#faq_dialog input:checked ~ .para-section{
+    border-top:2px solid steelblue;
+    border-bottom:2px solid steelblue;
+}
+.para-toggler{
+    display: none;
 }
 
 @media (orientation: portrait) {
@@ -728,62 +791,6 @@ form div {
 
     .form_subsection_left{
         width: 100%;
-    }
-
-    #faq_dialog{
-        padding: 0px 25px;
-    }
-    #faq_dialog h3{
-        padding: 20px 0px;
-        font-size: 20px;
-        position: relative;
-        border-top: 2px solid steelblue;
-        cursor: pointer;
-        transition: all 0.25s ease-in-out;
-    }
-    #faq_dialog h3:active{
-        color:  steelblue;
-        transition: all 0.25s ease-in-out;
-    }
-    #faq_dialog[p-visibility = "false"] h3::after{
-        content: '+';
-        width: 20px;
-        height: 20px;
-        font-size: 25px;
-        top: 20px;
-        right: 102%;
-        color: steelblue;
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.25s ease-in-out;
-    }
-    #faq_dialog[p-visibility = "true"] h3::after{
-        content: '-';
-        width: 20px;
-        height: 20px;
-        font-size: 25px;
-        top: 20px;
-        right: 102%;
-        color: steelblue;
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.25s ease-in-out;
-    }
-    
-    #faq_dialog[p-visibility="false"] p{
-        font-size: 0px;
-        transition: all 0.25s ease-in-out;
-    }
-    
-
-    #faq_dialog[p-visibility="true"] p{
-        font-size: 15px;
-        border-top: 2px solid steelblue;
-        transition: all 0.25s ease-in-out;
     }
     
 }
