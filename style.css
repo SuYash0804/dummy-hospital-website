@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Combo&family=Courgette&family=Lato&family=Overpass:wght@200&family=Poppins:ital,wght@1,900&family=Rubik&family=Ubuntu+Mono:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Combo&family=Courgette&family=Lato&family=Oswald:wght@600&family=Overpass:wght@200&family=Poppins:ital,wght@1,900&family=Rubik&family=Ubuntu+Mono:ital@1&display=swap');
+
 
 * {
     margin: 0px;
@@ -281,7 +282,7 @@ div h3 {
     gap: 5px;
 }
 
-.subsection_text h2 {
+.form_subsection h2 {
     text-align: left;
     line-height: 70px;
     font-size: 30px;
@@ -292,7 +293,8 @@ div h3 {
     line-height: 35px;
     font-size: 17.5px;
 }
-.subsection_text span {
+
+.form_subsection span {
     color: red;
 }
 
@@ -310,7 +312,7 @@ div h3 {
     background-color: rgba(0, 0, 0, 0);
     border: 3px solid steelblue;
     position: absolute;
-    top: 25%;
+    top: 7.5%;
     left: -3.5%;
     border-radius: 50%;
 }
@@ -331,6 +333,7 @@ div h3 {
     width: 100%;
     border-bottom: 2px dotted steelblue;
 }
+
 .form_subsection_left {
     width: 65%;
 }
@@ -346,8 +349,9 @@ form {
     align-items: center;
     gap: 15px;
     box-shadow: 0px 0px 15px black;
+    margin-top: 100px;
     position: sticky;
-    top: 20vh;
+    top: 25vh;
     border-radius: 7px;
     background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(2px);
@@ -358,6 +362,7 @@ form>* {
     width: 80%;
     border-radius: 7px;
 }
+
 form h3 {
     font-size: 50px;
     font-family: 'Courgette', cursive;
@@ -387,67 +392,163 @@ form div {
     width: 50%;
 }
 
-#faq_dialog{
+#faq_dialog {
     padding: 0px 25px;
 }
-#faq_dialog h3{
-    padding: 20px 0px;
+
+#faq_dialog h3 {
+    padding: 20px 0px 20px 40px;
     font-size: 20px;
     position: relative;
     cursor: pointer;
+    border-top: 2px solid steelblue;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    transition: all 0.25s;
 }
-#faq_dialog h3:active{
-    color:  steelblue;
+
+#faq_dialog h3:active {
+    color: steelblue;
 }
-#faq_dialog h3::after{
+
+#faq_dialog h3::after {
     content: '+';
     width: 20px;
     height: 20px;
     font-size: 25px;
     top: 20px;
-    right: 102%;
+    right: 98%;
     color: steelblue;
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.25s ease-in-out;
+    transition: all 0.25s;
 }
 
-#faq_dialog input:checked ~ label h3::after{
+#faq_dialog input:checked~label h3::after {
     content: '-';
     width: 20px;
     height: 20px;
     font-size: 25px;
     top: 20px;
-    right: 102%;
+    right: 98%;
     color: steelblue;
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.25s ease-in-out;
+    transform: rotate(180deg);
+    transition: all 0.25s;
 }
 
-#faq_dialog p{
-    max-height: 0px;
+#faq_dialog p {
+    height: 0px;
     font-size: 0px;
-    transition: all 0.25s ease-in-out;
+    transition: all 0.25s;
+    border: 0px;
 }
 
 
-#faq_dialog input:checked ~ div p{
-    max-height: 100%;
+#faq_dialog input:checked~div p {
+    height: 100%;
+    padding-left: 20px;
     font-size: 15px;
-    transition: all 0.25s ease-in-out;
+    transition: all 0.25s;
 }
 
-#faq_dialog input:checked ~ .para-section{
-    border-top:2px solid steelblue;
-    border-bottom:2px solid steelblue;
+#faq_dialog input:checked~.para-section {
+    margin: 20px 0px 20px 10px;
+    border-left: 2px solid steelblue;
 }
-.para-toggler{
+
+.para-toggler {
     display: none;
+}
+
+.car-1-cards {
+    width: 350px;
+    border: 2px solid gray;
+    background-color: rgba(0, 0, 0, 0.015);
+}
+
+.car-1-cards>* {
+    padding: 15px;
+}
+
+.car-1-cards h3 {
+    font-size: 20px;
+    text-align: left;
+    position: relative;
+}
+
+.car-1-cards h3::after {
+    content: url("icons/download\ \(1\).png");
+    position: absolute;
+    left: -45%;
+    top: -220px;
+    color: red;
+    transform: scale(20%);
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.car-1-cards p {
+    font-size: 15px;
+    text-align: justify;
+    color: rgb(67, 67, 67);
+}
+
+.car-1-cards .card_image {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 2px 2px 2px gray, -2px -2px 2px white;
+}
+
+.car-1-cards .card_image img {
+    height: 100%;
+    position: relative;
+    right: 20%;
+}
+
+#img_info {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#img_info h4 {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.grayscale {
+    border: 0px solid black;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    /* For Webkit browsers */
+    filter: gray;
+    /* For IE 6 - 9 */
+    -webkit-transition: all .6s ease;
+    /* Transition for Webkit browsers */
+}
+
+.grayscale:hover {
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    filter: none;
+}
+
+#owl-demo .owl-item {
+    margin: 3px;
+}
+
+#owl-demo .owl-item img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 @media (orientation: portrait) {
@@ -752,17 +853,18 @@ form div {
         background-color: rgba(0, 0, 0, 0);
         border: 3px solid steelblue;
         position: absolute;
-        top: 23%;
+        top: 7.5%;
         left: -10%;
         border-radius: 50%;
     }
 
-    #overview_section_image{
+    #overview_section_image {
         width: 100%;
         position: relative;
         bottom: 2em;
     }
-    #overview_section_image img{
+
+    #overview_section_image img {
         width: 100%;
     }
 
@@ -785,12 +887,13 @@ form div {
     .subsection_text ul li::before {
         left: -8%
     }
+
     #overview .subsection_text {
         width: 100%;
     }
 
-    .form_subsection_left{
+    .form_subsection_left {
         width: 100%;
     }
-    
+
 }
